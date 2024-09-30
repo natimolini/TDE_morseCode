@@ -76,4 +76,37 @@ public class BinaryTree {
         return tree;
     }
 
+    public static boolean getMorseCode(Node node, String character, ArrayList<String> code) {
+        if (node == null) {
+            return false;
+        } else if (node.value.equals(character)) {
+            return true;
+        } else {
+            if (getMorseCode(node.left, character, code)) {
+                code.add(0, ".");
+                return true;
+            } else if (getMorseCode(node.right, character, code)) {
+                code.add(0, "-");
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static String decodeMorse(Node node, String morseCode) {
+        Node current = node;
+        for (char symbol : morseCode.toCharArray()) {
+            if (symbol == '.') {
+                current = current.left;
+            } else if (symbol == '-') {
+                current = current.right;
+            }
+            if (current == null) {
+                return "Código morse inválido!";
+            }
+        }
+        return current.value;
+    }
+
 }
