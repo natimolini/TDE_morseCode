@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class BinaryTree {
     public static Node initTree() {
-        Node tree = new Node("START");
+        Node tree = new Node("Sem Mensagem");
 
         tree.left = new Node("E");
         tree.right = new Node("T");
@@ -71,8 +71,6 @@ public class BinaryTree {
         tree.right.right.right.left = new Node("9");
         tree.right.right.right.right = new Node("0");
 
-
-
         return tree;
     }
 
@@ -101,10 +99,16 @@ public class BinaryTree {
                 current = current.left;
             } else if (symbol == '-') {
                 current = current.right;
+            } else if (symbol != '.') {
+                System.out.println("Só pode '.' ou '-'");
+            } else if (symbol != '-') {
+                System.out.println("Só pode '.' ou '-'");
             }
+
             if (current == null) {
                 return "Código morse inválido!";
             }
+
         }
         return current.value;
     }
