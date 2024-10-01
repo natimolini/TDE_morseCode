@@ -99,10 +99,9 @@ public class BinaryTree {
                 current = current.left;
             } else if (symbol == '-') {
                 current = current.right;
-            } else if (symbol != '.') {
+            } else if ((symbol != '.') && (symbol != '-')) {
                 System.out.println("Só pode '.' ou '-'");
-            } else if (symbol != '-') {
-                System.out.println("Só pode '.' ou '-'");
+                return "Sem Mensagem";
             }
 
             if (current == null) {

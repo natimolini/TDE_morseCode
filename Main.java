@@ -10,7 +10,7 @@ public class  Main {
 
         while (true) {
             System.out.println("\nEscolha uma opção:");
-            System.out.println("1 - Trasnforme sua mensagem em código morse");
+            System.out.println("1 - Transforme sua mensagem em código morse");
             System.out.println("2 - Transforme seu código morse em mensagem");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
