@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class BinaryTree {
     public static Node initTree() {
-        Node tree = new Node("Sem Mensagem");
+        Node tree = new Node(" ");
 
         tree.left = new Node("E");
         tree.right = new Node("T");
@@ -42,8 +42,8 @@ public class BinaryTree {
         tree.left.left.left.right.left = new Node("");
         tree.left.left.left.right.right = new Node("3");
         tree.left.left.right.left.left = new Node("");
+        tree.left.left.right.left.right = new Node("");
 
-        tree.left.right.left.right = new Node("");
         tree.left.right.right.left = new Node("");
         tree.left.right.right.right = new Node("2");
         tree.right.left.left.left = new Node("");
