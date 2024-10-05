@@ -43,33 +43,35 @@ public class BinaryTree {
         tree.left.left.left.right.right = new Node("3");
         tree.left.left.right.left.left = new Node("");
         tree.left.left.right.left.right = new Node("");
+        tree.left.left.right.right.left = new Node("");
+        tree.left.left.right.left.right = new Node("2");
 
-        tree.left.right.right.left = new Node("");
-        tree.left.right.right.right = new Node("2");
-        tree.right.left.left.left = new Node("");
-        tree.right.left.left.right = new Node("");
-        tree.right.left.right.left = new Node("+");
-        tree.right.left.right.right = new Node("");
-        tree.right.right.left.left = new Node("");
-        tree.right.right.left.right = new Node("");
-        tree.right.right.right.left = new Node("");
-        tree.right.right.right.right = new Node("1");
-        tree.left.left.left.left = new Node("6");
-        tree.left.left.left.right = new Node("=");
-        tree.left.left.right.left = new Node("/");
-        tree.left.left.right.right = new Node("");
-        tree.left.right.left.left = new Node("");
-        tree.left.right.left.right = new Node("");
-        tree.left.right.right.left = new Node("");
-        tree.left.right.right.right = new Node("");
-        tree.right.left.left.left = new Node("7");
-        tree.right.left.left.right = new Node("");
-        tree.right.left.right.left = new Node("");
-        tree.right.left.right.right = new Node("");
-        tree.right.right.left.left = new Node("8");
-        tree.right.right.left.right = new Node("");
-        tree.right.right.right.left = new Node("9");
-        tree.right.right.right.right = new Node("0");
+        tree.left.right.left.left.left = new Node("");
+        tree.left.right.left.left.right = new Node("");
+        tree.left.right.left.right.left = new Node("+");
+        tree.left.right.left.right.right = new Node("");
+        tree.left.right.right.left.left = new Node("");
+        tree.left.right.right.left.right = new Node("");
+        tree.left.right.right.right.left = new Node("");
+        tree.left.right.right.right.right = new Node("1");
+
+        tree.right.left.left.left.left = new Node("6");
+        tree.right.left.left.left.right = new Node("=");
+        tree.right.left.left.right.left = new Node("/");
+        tree.right.left.left.right.right = new Node("");
+        tree.right.left.right.left.left = new Node("");
+        tree.right.left.right.left.right = new Node("");
+        tree.right.left.right.right.left = new Node("");
+        tree.right.left.right.right.right = new Node("");
+
+        tree.right.right.left.left.left = new Node("7");
+        tree.right.right.left.left.right = new Node("");
+        tree.right.right.left.right.left = new Node("");
+        tree.right.right.left.right.right = new Node("");
+        tree.right.right.right.left.left = new Node("8");
+        tree.right.right.right.left.right = new Node("");
+        tree.right.right.right.right.left = new Node("9");
+        tree.right.right.right.right.right = new Node("0");
 
         return tree;
     }
