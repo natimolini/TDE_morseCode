@@ -133,5 +133,4 @@ public class BinaryTree {
         }
         return decodedMessage.toString();
     }
-
 }
