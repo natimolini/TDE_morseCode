@@ -18,20 +18,17 @@ public class InterfaceGrafica extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Definir cores e fonte
         Color darkRed = new Color(0x921A40);
         Color mediumRed = new Color(0xC75B7A);
         Color lightPink = new Color(0xD9ABAB);
         Color veryLightPink = new Color(0xF4D9D0);
         Font font = new Font("SansSerif", Font.BOLD, 16);
 
-        // Configuração da árvore e painel
         tree = BinaryTree.initTree();
         treePanel = new TreePanel(tree);
         treePanel.setBackground(veryLightPink);
         add(treePanel, BorderLayout.CENTER);
 
-        // Área de entrada e saída de texto
         inputArea = new JTextArea(3, 20);
         inputArea.setBackground(lightPink);
         inputArea.setFont(font);
@@ -52,7 +49,6 @@ public class InterfaceGrafica extends JFrame {
         inputPanel.add(outputArea);
         add(inputPanel, BorderLayout.NORTH);
 
-        // Painel de botões
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(mediumRed);
         JButton toMorseButton = new JButton("Mensagem para Morse");
@@ -67,7 +63,6 @@ public class InterfaceGrafica extends JFrame {
 
         usedChars = new HashSet<>();
 
-        // Ação para transformar mensagem em código Morse
         toMorseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +77,6 @@ public class InterfaceGrafica extends JFrame {
             }
         });
 
-        // Ação para transformar código Morse em mensagem
         toMessageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -106,7 +100,7 @@ public class InterfaceGrafica extends JFrame {
     private void updateUsedChars(String message) {
         usedChars.clear();
         for (char c : message.toCharArray()) {
-            if (Character.isLetter(c) || Character.isDigit(c)) { // Inclui letras e números
+            if (Character.isLetter(c) || Character.isDigit(c)) {
                 usedChars.add(c);
             }
         }
@@ -138,13 +132,11 @@ public class InterfaceGrafica extends JFrame {
 
         private void drawFilteredTree(Graphics g, Node node, int x, int y, int xOffset) {
             if (node != null) {
-                // Verifica se o valor do nó não é nulo ou vazio
                 if (node.value != null && !node.value.isEmpty() && usedChars.contains(node.value.charAt(0))) {
                     g.drawRect(x - nodeWidth / 2, y, nodeWidth, nodeHeight);
                     g.drawString(node.value, x - nodeWidth / 4, y + nodeHeight / 2);
                 }
-
-                // Desenha as linhas para os filhos, se houver
+                
                 if (node.left != null) {
                     g.drawLine(x, y + nodeHeight, x - xOffset, y + verticalGap);
                     drawFilteredTree(g, node.left, x - xOffset, y + verticalGap, xOffset / 2);
