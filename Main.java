@@ -20,29 +20,13 @@ public class  Main {
                 case "1":
                     System.out.print("\nEscolha uma mensagem para transformar em código Morse: ");
                     String message = scanner.nextLine().toUpperCase();
-
-                    StringBuilder morseCode = new StringBuilder();
-                    for (char character : message.toCharArray()) {
-                        ArrayList<String> dotsDashes = new ArrayList<>();
-                        BinaryTree.getMorseCode(tree, String.valueOf(character), dotsDashes);
-                        String code = String.join("", dotsDashes);
-                        morseCode.append(code).append(" ");
-                    }
-                    System.out.println("Código Morse: " + morseCode);
+                    System.out.println("Código Morse: " + BinaryTree.getMorseCodeFromString(message));
                     break;
 
                 case "2":
                     System.out.print("\nDigite o código Morse para decodificar (separe os caracteres por espaço): ");
                     String morseMessage = scanner.nextLine().trim();
-                    String[] morseLetters = morseMessage.split(" ");
-
-                    StringBuilder decodedMessage = new StringBuilder();
-                    for (String morseLetter : morseLetters) {
-                        String decodedChar = BinaryTree.decodeMorse(tree, morseLetter);
-                        decodedMessage.append(decodedChar);
-                    }
-
-                    System.out.println("Mensagem decodificada: " + decodedMessage);
+                    System.out.println("Mensagem decodificada: " + BinaryTree.getStringFromMorseCode(morseMessage));
                     break;
 
                 case "0":

@@ -73,7 +73,7 @@ public class BinaryTree {
         return tree;
     }
 
-    public static boolean getMorseCode(Node node, String character, ArrayList<String> code) {
+    private static boolean getMorseCode(Node node, String character, ArrayList<String> code) {
         if (node == null) {
             return false;
         } else if (node.value.equals(character)) {
@@ -90,8 +90,20 @@ public class BinaryTree {
         return false;
     }
 
+    public static String getMorseCodeFromString(String message){
+        Node tree = initTree();
+        StringBuilder morseCode = new StringBuilder();
+        for (char character : message.toCharArray()) {
+            ArrayList<String> dotsDashes = new ArrayList<>();
+            getMorseCode(tree, String.valueOf(character), dotsDashes);
+            String code = String.join("", dotsDashes);
+            morseCode.append(code).append(" ");
+        }
+        return morseCode.toString();
+    }
 
-    public static String decodeMorse(Node node, String morseCode) {
+
+    private static String decodeMorse(Node node, String morseCode) {
         Node current = node;
         for (char symbol : morseCode.toCharArray()) {
             if (symbol == '.') {
@@ -109,6 +121,17 @@ public class BinaryTree {
 
         }
         return current.value;
+    }
+
+    public static String getStringFromMorseCode(String morseCode){
+        Node tree = initTree();
+        StringBuilder decodedMessage = new StringBuilder();
+        String[] morseLetters = morseCode.split(" ");
+        for (String morseLetter : morseLetters) {
+            String decodedChar = decodeMorse(tree, morseLetter);
+            decodedMessage.append(decodedChar);
+        }
+        return decodedMessage.toString();
     }
 
 }
